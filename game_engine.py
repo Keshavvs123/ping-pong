@@ -4,10 +4,13 @@ from .paddle import Paddle
 
 WHITE = (255, 255, 255)
 
+
 class GameEngine:
-    def __init__(self, screen_width, screen_height):
-        self.width = screen_width
-        self.height = screen_height
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+        # other initialization...
+
 
         # Paddles
         paddle_width, paddle_height = 20, 100
@@ -25,9 +28,9 @@ class GameEngine:
         self.font = pygame.font.SysFont(None, 40)
 
         # Load sounds
-        self.sound_paddle = pygame.mixer.Sound("sounds/paddle_hit.wav")
-        self.sound_wall = pygame.mixer.Sound("sounds/wall_bounce.wav")
-        self.sound_score = pygame.mixer.Sound("sounds/score.wav")
+        self.sound_paddle = pygame.mixer.Sound("paddle_hit.wav")
+        self.sound_wall = pygame.mixer.Sound("wall_hit.wav")
+        self.sound_score = pygame.mixer.Sound("score.wav")
 
     def handle_input(self, events):
         """Handle player paddle input (W/S keys)"""
